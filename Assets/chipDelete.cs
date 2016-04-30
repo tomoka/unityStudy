@@ -11,7 +11,7 @@ public class chipDelete : MonoBehaviour {
 		print (Time.deltaTime);
 		print (time);
 		this.time = 0f;
-		this.life_time = (4f * Random.value) + 1f;
+		this.life_time = (4f * Random.value) + 4f;
 	}
 
 	// Update is called once per frame
