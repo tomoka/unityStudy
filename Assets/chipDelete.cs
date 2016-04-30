@@ -10,17 +10,18 @@ public class chipDelete : MonoBehaviour {
 	void Start () {
 		print (Time.deltaTime);
 		print (time);
-		time = 0f;
-		life_time = (4f * Random.value) + 4f;
+		this.time = 0f;
+		this.life_time = (4f * Random.value) + 1f;
 	}
 
 	// Update is called once per frame
 	void Update () {
+		print ("this.life_time------>" + this.life_time);
 		print ("life_time------>" + life_time);
-		if(time>life_time){
+		if(this.time > this.life_time){
 			//time = 0f;
 			Destroy(gameObject);
 		}
-		time = time + Time.deltaTime;
+		this.time = this.time + Time.deltaTime;
 	}
 }
