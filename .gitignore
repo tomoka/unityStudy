@@ -1,5 +1,6 @@
 .
 Assembly-CSharp.csproj
+gameSample.userprefs
 
 coinDown/.
 coinDown/Assembly-CSharp.csproj
@@ -8,3 +9,5 @@ coinDown/Library/
 coinDown/obj/
 coinDown/Temp/
 
+singleSlot/.
+singleSlot/Library/
