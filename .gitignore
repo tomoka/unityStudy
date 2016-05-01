@@ -1,6 +1,10 @@
+.
+Assembly-CSharp.csproj
+
 coinDown/.
 coinDown/Assembly-CSharp.csproj
 coinDown/gameSample.sln
 coinDown/Library/
 coinDown/obj/
 coinDown/Temp/
+
