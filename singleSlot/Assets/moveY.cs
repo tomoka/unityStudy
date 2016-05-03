@@ -20,12 +20,16 @@ public class moveY : MonoBehaviour {
 			y, 
 			transform.position.z
 		);
-		print("Time.time----->" + Time.time);
-		print(Mathf.PingPong(Time.time,5));
+		//print("Time.time----->" + Time.time);
+		//print(Mathf.PingPong(Time.time,5));
 
 		if(transform.position.y < -6){
 			y = 6;
 		}
 
+	}
+	void test(){
+		Debug.Log("test()");	
+		Debug.Log(this.transform.name);	
 	}
 }
