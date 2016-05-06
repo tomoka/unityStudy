@@ -2,31 +2,22 @@
 using System.Collections;
 
 public class moveY : MonoBehaviour {
-
-	// Use this for initialization
-	///void Start () {
-	
-	//}
-	
-	// Update is called once per frame
 	public float y;
 
+	// Use this for initialization
+	void Start () {
+		y = 8;
+		this.transform.position = new Vector3(0,y,10);
+	}
+	
+	// Update is called once per frame
+
 	void Update () {
-		y --;
-		transform.position = new Vector3
-			(
-			transform.position.x, 
-			//Mathf.PingPong(Time.time,5), 
-			y, 
-			transform.position.z
-		);
-		//print("Time.time----->" + Time.time);
-		//print(Mathf.PingPong(Time.time,5));
-
+		y = y - 1;
+		this.transform.position = new Vector3(0,y,10);
 		if(transform.position.y < -6){
-			y = 6;
+			Destroy(gameObject);
 		}
-
 	}
 	void test(){
 		Debug.Log("test()");	
