@@ -33,6 +33,8 @@ public class mainLoop : MonoBehaviour {
 		Debug.Log("position--->" + retObj.transform.position);
 		Debug.Log("right---->" + retObj.transform.right);
 		Debug.Log("localScale---->" + retObj.transform.localScale);
+
+		Score.score++;
 	}
 
 	void example() {
