@@ -21,7 +21,7 @@ public class mainLoop : MonoBehaviour {
 	void Update () {
 		GameObject retObj = Instantiate(Resources.Load("slotPrefab", typeof(GameObject))) as GameObject;
 		retObj.transform.name = "aaaaaaaaaaaaa";
-		retObj.transform.position = new Vector3(0,8,10);
+		retObj.transform.position = new Vector3(2,8,10);
 		retObj.transform.parent = gameObject.transform;
 
 		var sr = retObj.GetComponent<SpriteRenderer>();
@@ -34,7 +34,7 @@ public class mainLoop : MonoBehaviour {
 		Debug.Log("right---->" + retObj.transform.right);
 		Debug.Log("localScale---->" + retObj.transform.localScale);
 
-		Score.score++;
+		//Score.score++;
 	}
 
 	void example() {
