@@ -23,6 +23,13 @@ public class mainLoop : MonoBehaviour {
 		retObj.transform.name = "aaaaaaaaaaaaa";
 		retObj.transform.position = new Vector3(0,8,10);
 		retObj.transform.parent = gameObject.transform;
+
+		var sr = retObj.GetComponent<SpriteRenderer>();
+		var width = sr.bounds.size.x;
+		var height = sr.bounds.size.y;
+
+		Debug.Log("sr.bounds.size.x--->" + (width * 192));
+		Debug.Log("sr.bounds.size.y--->" + (height * 192));
 		Debug.Log("position--->" + retObj.transform.position);
 		Debug.Log("right---->" + retObj.transform.right);
 		Debug.Log("localScale---->" + retObj.transform.localScale);
