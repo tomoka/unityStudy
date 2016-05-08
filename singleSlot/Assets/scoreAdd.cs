@@ -17,6 +17,8 @@ public class scoreAdd : MonoBehaviour {
 		if(!stopFlag){
 			stopFlag = true;
 			Score.score++;
+		}else{
+			stopFlag = false;
 		}
 	}
 }

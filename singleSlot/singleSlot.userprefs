@@ -1,10 +1,12 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/mainLoop.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/moveY.cs">
     <Files>
-      <File FileName="Assets/mainLoop.cs" Line="33" Column="1" />
-      <File FileName="Assets/moveY.cs" Line="8" Column="17" />
+      <File FileName="Assets/Score.cs" Line="11" Column="17" />
+      <File FileName="Assets/mainLoop.cs" Line="24" Column="20" />
+      <File FileName="Assets/moveY.cs" Line="19" Column="1" />
       <File FileName="Assets/singleSpawn.cs" Line="1" Column="1" />
+      <File FileName="Assets/scoreAdd.cs" Line="19" Column="4" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

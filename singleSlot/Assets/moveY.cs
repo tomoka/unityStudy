@@ -14,9 +14,7 @@ public class moveY : MonoBehaviour {
 
 	void Update () {
 		if(!scoreAdd.stopFlag){
-			y = y - 0.1f;
-		}else{
-			y = y;
+			y = y - (0.1f * 2);
 		}
 
 		this.transform.position = new Vector3(2,y,10);
