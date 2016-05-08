@@ -2,11 +2,11 @@
 using System.Collections;
 
 public class moveY : MonoBehaviour {
-	public float y;
+	private float y;
 
 	// Use this for initialization
 	void Start () {
-		y = 8;
+		y = 4;
 		this.transform.position = new Vector3(2,y,10);
 	}
 	
@@ -18,8 +18,8 @@ public class moveY : MonoBehaviour {
 		}
 
 		this.transform.position = new Vector3(2,y,10);
-		if(transform.position.y < -6){
-			Destroy(gameObject);
+		if(this.transform.position.y < -1){
+			Destroy(this.gameObject);
 		}
 	}
 	void test(){

@@ -30,7 +30,7 @@ public class iTweenSample : MonoBehaviour {
 		// パターン１ [Hashを前もって登録してから使う方法]
 		// 移動
 		var moveHash = new Hashtable();
-		moveHash.Add ("position", new Vector3(2f, 2f, 0));
+		moveHash.Add ("position", new Vector3(2f, 2f, 10));
 		moveHash.Add ("time", 2f);
 		moveHash.Add ("delay", 1f);
 		moveHash.Add ("easeType", "easeInOutBack");
@@ -50,25 +50,25 @@ public class iTweenSample : MonoBehaviour {
 		// パターン２ [HashをiTweenの中で宣言いていく方法]
 		// 移動
 		iTween.MoveTo (this.gameObject, iTween.Hash(
-			"x", -3f,
+			"x", -2f,
 			"time", time,
 			"oncomplete", "AnimationEnd", 
 			"oncompletetarget", this.gameObject, 
 			"easeType", "easeInOutBack"
 		));
 
-		// 回転
+		/* 回転
 		iTween.RotateTo(this.gameObject, iTween.Hash(
 			"x", 90,
 			"time", time
 		));
 
-		// 大きさ
+		/ 大きさ
 		iTween.ScaleTo(this.gameObject, iTween.Hash(
 			"x", 2f,
 			"y", 2f,
-			"z", 2f,
+			"z", 10,
 			"time", time
-		));
+		));*/
 	}
 }
