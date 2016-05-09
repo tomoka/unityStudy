@@ -31,7 +31,7 @@ public class mainLoop : MonoBehaviour {
 		timerNow = Time.time;
 		timerPass = timerNow - datetimeStr;
 		//timer += Time.deltaTime;
-		//Debug.Log("timerPass--->" + timerPass);
+		Debug.Log("Time.time--->" + Time.time);
 		if (timerPass > waitTime) {
 			//do something.
 			Invoke("example", 1);
