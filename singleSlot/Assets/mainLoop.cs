@@ -14,8 +14,8 @@ public class mainLoop : MonoBehaviour {
 
 	void Start () {
 		count = 0;
-		waitTime = 5f;
-		datetimeStr = System.DateTime.Now;
+		waitTime = 1f;
+		datetimeStr = Time.time;
 
 		if (gameObject.transform.IsChildOf(gameObject.transform)){
 			Debug.Log("true");
@@ -28,14 +28,14 @@ public class mainLoop : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update (){
-		timerNow = System.DateTime.Now;
+		timerNow = Time.time;
 		timerPass = timerNow - datetimeStr;
 		//timer += Time.deltaTime;
-		Debug.Log("timerPass--->" + timerPass);
+		//Debug.Log("timerPass--->" + timerPass);
 		if (timerPass > waitTime) {
 			//do something.
 			Invoke("example", 1);
-			datetimeStr = System.DateTime.Now;
+			datetimeStr = Time.time;
 		}
 		//Score.score++;
 	}

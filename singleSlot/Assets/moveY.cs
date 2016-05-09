@@ -18,7 +18,7 @@ public class moveY : MonoBehaviour {
 		}
 
 		this.transform.position = new Vector3(2,y,10);
-		if(this.transform.position.y < -1){
+		if(this.transform.position.y < -3.4){
 			Destroy(this.gameObject);
 		}
 	}
