@@ -6,6 +6,9 @@ public class mainLoop : MonoBehaviour {
 	// Use this for initialization
 	public GameObject objB;
 	public GameObject prefab;
+	public GameObject retObj;
+	public GameObject preObj;
+
 	public int count;
 	private float timerNow;
 	private float timerPass;
@@ -24,6 +27,16 @@ public class mainLoop : MonoBehaviour {
 		}else{
 			Debug.Log("false");
 		}
+		retObj = Instantiate(Resources.Load("slotPrefab", typeof(GameObject))) as GameObject;
+		retObj.transform.name = "Obj" + (count++);
+		retObj.transform.position = new Vector3(0,12,10);
+		retObj.transform.parent = gameObject.transform;
+		preObj = retObj;
+
+		retObj = Instantiate(Resources.Load("slotPrefab", typeof(GameObject))) as GameObject;
+		retObj.transform.name = "Obj" + (count++);
+		retObj.transform.position = new Vector3(0,7,10);
+		retObj.transform.parent = gameObject.transform;
 	}
 	
 	// Update is called once per frame
@@ -34,18 +47,25 @@ public class mainLoop : MonoBehaviour {
 		Debug.Log("Time.time--->" + Time.time);
 		if (timerPass > waitTime) {
 			//do something.
-			Invoke("example", 1);
+			//Invoke("example",0);
 			datetimeStr = Time.time;
+		}
+		if (preObj) {
+			if (preObj.transform.position.y < 2) {
+			//do something.
+			Invoke("example",0);
+			}
 		}
 		//Score.score++;
 	}
 
 	void example() {
 		if(!scoreAdd.stopFlag){
-			GameObject retObj = Instantiate(Resources.Load("slotPrefab", typeof(GameObject))) as GameObject;
+			retObj = Instantiate(Resources.Load("slotPrefab", typeof(GameObject))) as GameObject;
 			retObj.transform.name = "Obj" + (count++);
-			retObj.transform.position = new Vector3(2,5,10);
+			retObj.transform.position = new Vector3(-1,7,10);
 			retObj.transform.parent = gameObject.transform;
+			preObj = retObj;
 
 			var sr = retObj.GetComponent<SpriteRenderer>();
 			var width = sr.bounds.size.x;
