@@ -7,7 +7,7 @@ public class mainLoop : MonoBehaviour {
 	public GameObject objB;
 	public GameObject prefab;
 	public GameObject retObj;
-	public GameObject preObj;
+	public static GameObject preObj;
 
 	public int count;
 	private float timerNow;
@@ -29,7 +29,7 @@ public class mainLoop : MonoBehaviour {
 		}
 		retObj = Instantiate(Resources.Load("slotPrefab", typeof(GameObject))) as GameObject;
 		retObj.transform.name = "Obj" + (count++);
-		retObj.transform.position = new Vector3(0,12,10);
+		retObj.transform.position = new Vector3(0,12.5f,10);
 		retObj.transform.parent = gameObject.transform;
 		preObj = retObj;
 
@@ -41,10 +41,11 @@ public class mainLoop : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update (){
+		Debug.Log(Screen.dpi);
 		timerNow = Time.time;
 		timerPass = timerNow - datetimeStr;
 		//timer += Time.deltaTime;
-		Debug.Log("Time.time--->" + Time.time);
+		//Debug.Log("Time.time--->" + Time.time);
 		if (timerPass > waitTime) {
 			//do something.
 			//Invoke("example",0);
@@ -63,19 +64,19 @@ public class mainLoop : MonoBehaviour {
 		if(!scoreAdd.stopFlag){
 			retObj = Instantiate(Resources.Load("slotPrefab", typeof(GameObject))) as GameObject;
 			retObj.transform.name = "Obj" + (count++);
-			retObj.transform.position = new Vector3(-1,7,10);
+			retObj.transform.position = new Vector3(0,7,10);
 			retObj.transform.parent = gameObject.transform;
 			preObj = retObj;
 
-			var sr = retObj.GetComponent<SpriteRenderer>();
-			var width = sr.bounds.size.x;
-			var height = sr.bounds.size.y;
+			//var sr = retObj.GetComponent<SpriteRenderer>();
+			//var width = sr.bounds.size.x;
+			//var height = sr.bounds.size.y;
 
-			Debug.Log("sr.bounds.size.x--->" + (width));
-			Debug.Log("sr.bounds.size.y--->" + (height));
-			Debug.Log("position--->" + retObj.transform.position);
-			Debug.Log("right---->" + retObj.transform.right);
-			Debug.Log("localScale---->" + retObj.transform.localScale);
+			//Debug.Log("sr.bounds.size.x--->" + (width));
+			//Debug.Log("sr.bounds.size.y--->" + (height));
+			//Debug.Log("position--->" + retObj.transform.position);
+			//Debug.Log("right---->" + retObj.transform.right);
+			//Debug.Log("localScale---->" + retObj.transform.localScale);
 		}
 	}
 }

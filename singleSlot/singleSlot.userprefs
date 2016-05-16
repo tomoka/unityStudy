@@ -1,14 +1,16 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/mainLoop.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/scoreAdd.cs">
     <Files>
-      <File FileName="Assets/mainLoop.cs" Line="66" Column="46" />
+      <File FileName="Assets/scoreAdd.cs" Line="3" Column="1" />
+      <File FileName="Assets/sample.cs" Line="1" Column="1" />
+      <File FileName="Assets/mainLoop.cs" Line="44" Column="23" />
       <File FileName="Assets/Score.cs" Line="1" Column="1" />
-      <File FileName="Assets/moveY.cs" Line="20" Column="4" />
+      <File FileName="Assets/moveY.cs" Line="1" Column="1" />
       <File FileName="Assets/singleSpawn.cs" Line="1" Column="1" />
-      <File FileName="Assets/scoreAdd.cs" Line="1" Column="1" />
       <File FileName="Assets/iTweenSample.cs" Line="1" Column="1" />
       <File FileName="Assets/Plugins/Pixelplacement/iTween/iTween.cs" Line="1" Column="1" />
+      <File FileName="Assets/UIFollowTarget.cs" Line="9" Column="19" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

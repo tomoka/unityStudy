@@ -3,6 +3,8 @@ using System.Collections;
 
 public class scoreAdd : MonoBehaviour {
 	public static bool stopFlag = false;
+	//private float y = mainLoop.preObj.transform.position.y;
+	//private enum positionY : float {4, 2, 5};
 
 	// Use this for initialization
 	void Start () {
@@ -14,11 +16,32 @@ public class scoreAdd : MonoBehaviour {
 
 	public void ButtonPush() { // MUST public
 		Debug.Log ("clicked");
-		if(!stopFlag){
+		if (!stopFlag) {
 			stopFlag = true;
-			Score.score++;
-		}else{
-			stopFlag = false;
-		}
+			int num = (int)Screen.dpi;
+			Score.score = num;
+
+			//positionY = y;
+
+			/*switch ( !positionY ){
+				case 2:
+					Debug.Log(y);
+					Debug.Log("パー");
+					break;
+				case 4:
+					Debug.Log(y);
+					Debug.Log("ぐー");
+					break;
+				case 5:
+					Debug.Log(y);
+					Debug.Log("チョキ");
+					break;
+				default:
+					break;
+				}*/
+			} else {
+				stopFlag = false;
+			}
+
 	}
 }

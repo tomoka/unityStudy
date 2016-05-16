@@ -5,6 +5,8 @@ Project("{3A49C3A0-2A39-FB87-7D48-0D98C5D659C8}") = "singleSlot", "Assembly-CSha
 EndProject
 Project("{3A49C3A0-2A39-FB87-7D48-0D98C5D659C8}") = "singleSlot", "Assembly-CSharp.csproj", "{65A3D17C-618F-2F6B-9720-B3E51774C598}"
 EndProject
+Project("{3A49C3A0-2A39-FB87-7D48-0D98C5D659C8}") = "singleSlot", "Assembly-CSharp-Editor.csproj", "{4CF097BD-E7DA-16ED-4FCF-E2AF50797E73}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,6 +21,10 @@ Global
 		{65A3D17C-618F-2F6B-9720-B3E51774C598}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{65A3D17C-618F-2F6B-9720-B3E51774C598}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{65A3D17C-618F-2F6B-9720-B3E51774C598}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4CF097BD-E7DA-16ED-4FCF-E2AF50797E73}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4CF097BD-E7DA-16ED-4FCF-E2AF50797E73}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4CF097BD-E7DA-16ED-4FCF-E2AF50797E73}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4CF097BD-E7DA-16ED-4FCF-E2AF50797E73}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
