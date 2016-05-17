@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 using System;
 
@@ -14,6 +14,8 @@ public class mainLoop : MonoBehaviour {
 	private float timerPass;
 	private float waitTime;
 	private float datetimeStr;
+
+	public static float slotItemY;
 
 	void Start () {
 		count = 0;
@@ -41,7 +43,7 @@ public class mainLoop : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update (){
-		Debug.Log(Screen.dpi);
+		//Debug.Log(Screen.dpi);
 		timerNow = Time.time;
 		timerPass = timerNow - datetimeStr;
 		//timer += Time.deltaTime;
