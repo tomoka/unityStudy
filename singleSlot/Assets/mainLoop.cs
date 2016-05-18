@@ -6,7 +6,7 @@ public class mainLoop : MonoBehaviour {
 	// Use this for initialization
 	public GameObject objB;
 	public GameObject prefab;
-	public GameObject retObj;
+	public static GameObject retObj;
 	public static GameObject preObj;
 
 	public int count;
@@ -31,13 +31,13 @@ public class mainLoop : MonoBehaviour {
 		}
 		retObj = Instantiate(Resources.Load("slotPrefab", typeof(GameObject))) as GameObject;
 		retObj.transform.name = "Obj" + (count++);
-		retObj.transform.position = new Vector3(0,12.5f,10);
+		retObj.transform.position = new Vector3(0,2.5f,10f);
 		retObj.transform.parent = gameObject.transform;
 		preObj = retObj;
 
 		retObj = Instantiate(Resources.Load("slotPrefab", typeof(GameObject))) as GameObject;
 		retObj.transform.name = "Obj" + (count++);
-		retObj.transform.position = new Vector3(0,7,10);
+		retObj.transform.position = new Vector3(0,8f,10f);
 		retObj.transform.parent = gameObject.transform;
 	}
 	
@@ -54,7 +54,7 @@ public class mainLoop : MonoBehaviour {
 			datetimeStr = Time.time;
 		}
 		if (preObj) {
-			if (preObj.transform.position.y < 2) {
+			if (preObj.transform.position.y < 2.5f) {
 			//do something.
 			Invoke("example",0);
 			}
@@ -66,7 +66,7 @@ public class mainLoop : MonoBehaviour {
 		if(!scoreAdd.stopFlag){
 			retObj = Instantiate(Resources.Load("slotPrefab", typeof(GameObject))) as GameObject;
 			retObj.transform.name = "Obj" + (count++);
-			retObj.transform.position = new Vector3(0,7,10);
+			retObj.transform.position = new Vector3(0,8f,10f);
 			retObj.transform.parent = gameObject.transform;
 			preObj = retObj;
 
@@ -80,5 +80,37 @@ public class mainLoop : MonoBehaviour {
 			//Debug.Log("right---->" + retObj.transform.right);
 			//Debug.Log("localScale---->" + retObj.transform.localScale);
 		}
+	}
+	public static void result(int num) {
+		float stopPositionY = 0f;
+		switch ( num ){
+		case 1:
+			Debug.Log("パー");
+			stopPositionY = 3.5f;
+			break;
+		case 2:
+			Debug.Log("チョキ");
+			stopPositionY = 3.5f;
+			break;
+		case 3:
+			Debug.Log("ぐー");
+			stopPositionY = 3.5f;
+			break;
+		default:
+			break;
+		}
+
+		iTween.MoveTo (preObj, iTween.Hash(
+			"y", stopPositionY,
+			"time", 1f,
+			"easeType", "easeInOutBack"
+		));
+
+		iTween.MoveTo (retObj, iTween.Hash(
+			"y", stopPositionY,
+			"time", 1f,
+			"easeType", "easeInOutBack"
+		));
+
 	}
 }

@@ -34,8 +34,8 @@ public class singleSpawn : MonoBehaviour {
 		}
 	}
 	void test(){
-		Debug.Log("testttt()");	
-		Debug.Log(this.transform.name);	
+		//Debug.Log("testttt()");	
+		//Debug.Log(this.transform.name);	
 	}
 
 }

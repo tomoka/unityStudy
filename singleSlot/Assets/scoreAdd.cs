@@ -6,6 +6,8 @@ public class scoreAdd : MonoBehaviour {
 	//private float y = mainLoop.preObj.transform.position.y;
 	//private enum positionY : float {4, 2, 5};
 	public float positionY;
+	public static int num = 0;
+
 
 	// Use this for initialization
 	void Start () {
@@ -20,32 +22,44 @@ public class scoreAdd : MonoBehaviour {
 		if (!stopFlag) {
 			stopFlag = true;
 			//int num = (int)Screen.dpi;
-			int num;
 			//Score.score = num++;
 			positionY = mainLoop.preObj.transform.position.y;
-			num = (int)positionY;
-			Score.score = num;
 
+			if (positionY >= 2.5 && positionY < 4.5){
+				num = (int)1;
+			} else if (positionY >= 0.5 && positionY < 2.5 || positionY >= -3.5 && positionY < -1.5){
+				num = (int)2;
+			} else if (positionY >= 4.5 && positionY < 6.5 || positionY >= -1.5 && positionY < 0.5) {
+				num = (int)3;
+			} else if (positionY >= 6.5 || positionY < -3.5) {
+				num = (int)1;
+			}
+			//num = (int)positionY;
+			Score.score++;
+
+			Debug.Log ("positionY----->" + positionY);
 			Debug.Log ("num----->" + num);
 
-
-			/*3=パー(2.6)
-			 * 1.8=チョキ()
-			 * 5.4 = グー
+			/*
+			 * パー = (4.5~2.5)(-3.5~6.5)
+			 * チョキ = (2.5~0.5)(-1.5~-3.5)
+			 * グー = (6.5~4.5)(0.5~-1.5)
 			 */
+
 			switch ( num ){
-				case 3:
+				case 1:
 					Debug.Log("パー");
 					break;
-				case 5:
-					Debug.Log("ぐー");
-					break;
-				case 1:
+				case 2:
 					Debug.Log("チョキ");
+					break;
+				case 3:
+					Debug.Log("ぐー");
 					break;
 				default:
 					break;
 				}
+			mainLoop.result(num);
 		
 			} else {
 				stopFlag = false;

@@ -1,0 +1,17 @@
+/Users/TakeuchiTomoka/unity/gameSample/singleSlot/Temp/bin/Debug/Assembly-CSharp-firstpass.dll.mdb
+/Users/TakeuchiTomoka/unity/gameSample/singleSlot/Temp/bin/Debug/Assembly-CSharp-firstpass.dll
+/Users/TakeuchiTomoka/unity/gameSample/singleSlot/obj/Debug/Assembly-CSharp-firstpass.dll
+/Users/TakeuchiTomoka/unity/gameSample/singleSlot/obj/Debug/Assembly-CSharp-firstpass.dll.mdb
+/Users/TakeuchiTomoka/unity/gameSample/singleSlot/Temp/bin/Debug/UnityEngine.dll
+/Users/TakeuchiTomoka/unity/gameSample/singleSlot/Temp/bin/Debug/UnityEditor.dll
+/Users/TakeuchiTomoka/unity/gameSample/singleSlot/Temp/bin/Debug/UnityEngine.UI.dll
+/Users/TakeuchiTomoka/unity/gameSample/singleSlot/Temp/bin/Debug/UnityEngine.Networking.dll
+/Users/TakeuchiTomoka/unity/gameSample/singleSlot/Temp/bin/Debug/Mono.Cecil.dll
+/Users/TakeuchiTomoka/unity/gameSample/singleSlot/Temp/bin/Debug/Unity.SerializationLogic.dll
+/Users/TakeuchiTomoka/unity/gameSample/singleSlot/Temp/bin/Debug/Unity.DataContract.dll
+/Users/TakeuchiTomoka/unity/gameSample/singleSlot/Temp/bin/Debug/ICSharpCode.NRefactory.dll
+/Users/TakeuchiTomoka/unity/gameSample/singleSlot/Temp/bin/Debug/Unity.UNetWeaver.dll
+/Users/TakeuchiTomoka/unity/gameSample/singleSlot/Temp/bin/Debug/Unity.UNetWeaver.dll.mdb
+/Users/TakeuchiTomoka/unity/gameSample/singleSlot/Temp/bin/Debug/Unity.CecilTools.dll
+/Users/TakeuchiTomoka/unity/gameSample/singleSlot/Temp/bin/Debug/Mono.Cecil.Pdb.dll
+/Users/TakeuchiTomoka/unity/gameSample/singleSlot/Temp/bin/Debug/Mono.Cecil.Mdb.dll
