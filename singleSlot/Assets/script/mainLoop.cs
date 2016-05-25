@@ -1,4 +1,4 @@
-using UnityEngine;
+ using UnityEngine;
 using System.Collections;
 using System;
 
@@ -118,8 +118,22 @@ public class mainLoop : MonoBehaviour {
 		}*/
 
 		if(scoreAdd.stopFlag){
-			StartCoroutine("objMoveY");
+			//StartCoroutine("objMoveY");
 			}
+		//次のオブジェクト
+		iTween.MoveTo (preObj, iTween.Hash(
+			"y", stopPositionY02,
+			"time", 1f,
+			"easeType", "easeInOutQuad"
+		));
+
+		//前のオブジェクト
+		iTween.MoveTo (retObj, iTween.Hash(
+			"y", stopPositionY01,
+			"time",1f,
+			"easeType", "easeInOutQuad"
+		));
+
 	}
 	private IEnumerator objMoveY (){
 			do{

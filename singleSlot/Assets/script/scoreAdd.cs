@@ -88,7 +88,9 @@ public class scoreAdd : MonoBehaviour {
 		
 			} else {
 				//elseの処理なしにする。mainLoopに処理を寄せる
-				//stopFlag = false;
+				stopFlag = false;
+				stopFlagBtn = true;
+
 			}
 
 	}
