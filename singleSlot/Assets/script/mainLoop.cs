@@ -25,6 +25,9 @@ public class mainLoop : MonoBehaviour {
 	public static float stopPositionY01;
 	public static float stopPositionY02;
 
+	public static float speed = 1f;
+
+
 
 	void Start () {
 		count = 0;
@@ -70,6 +73,13 @@ public class mainLoop : MonoBehaviour {
 			}
 		}
 
+		if(speed < 2 && !scoreAdd.stopFlag){
+			speed = speed + (speed * 0.01f);
+		}else if(speed > 0.01 && scoreAdd.stopFlag){
+			speed = speed - (speed * 0.01f);
+		}
+
+
 	}
 
 	void example() {
@@ -79,7 +89,7 @@ public class mainLoop : MonoBehaviour {
 
 			preObj = Instantiate(Resources.Load("slotPrefab", typeof(GameObject))) as GameObject;
 			preObj.transform.name = "Obj02";
-			preObj.transform.position = new Vector3(0,7.4f,10f);
+			preObj.transform.position = new Vector3(0,8f,10f);
 			preObj.transform.parent = gameObject.transform;
 
 			//var sr = retObj.GetComponent<SpriteRenderer>();
@@ -91,6 +101,15 @@ public class mainLoop : MonoBehaviour {
 			//Debug.Log("position--->" + retObj.transform.position);
 			//Debug.Log("right---->" + retObj.transform.right);
 			//Debug.Log("localScale---->" + retObj.transform.localScale);
+		}else{
+			retObj = preObj;
+			retObj.transform.name = "Obj01";
+
+			preObj = Instantiate(Resources.Load("slotPrefab", typeof(GameObject))) as GameObject;
+			preObj.transform.name = "Obj02";
+			preObj.transform.position = new Vector3(0,8f,10f);
+			preObj.transform.parent = gameObject.transform;
+
 		}
 	}
 	public static void result(int num,float positionY01,float positionY02) {
@@ -117,9 +136,6 @@ public class mainLoop : MonoBehaviour {
 			break;
 		}*/
 
-		if(scoreAdd.stopFlag){
-			//StartCoroutine("objMoveY");
-			}
 		//次のオブジェクト
 		iTween.MoveTo (preObj, iTween.Hash(
 			"y", stopPositionY02,
@@ -134,51 +150,5 @@ public class mainLoop : MonoBehaviour {
 			"easeType", "easeInOutQuad"
 		));
 
-	}
-	private IEnumerator objMoveY (){
-			do{
-			// 座標の移動
-			retObjY = retObj.transform.position.y;
-			preObjY = preObj.transform.position.y;
-			retObjY = retObjY - (0.1f * 2);
-			preObjY = preObjY - (0.1f * 2);
-
-			retObj.transform.position = new Vector3(0,retObjY,0);
-			preObj.transform.position = new Vector3(0,preObjY,0);
-
-			if(retObj.transform.position.y < -3.4){
-				Destroy(retObj);
-				retObj = preObj;
-				retObj.transform.name = "Obj01";
-
-				//前
-				preObj = Instantiate(Resources.Load("slotPrefab", typeof(GameObject))) as GameObject;
-				preObj.transform.name = "Obj02";
-				preObj.transform.position = new Vector3(0,8f,10f);
-				//preObj.transform.parent = gameObject.transform.root;
-				stopFlagCount++;
-			}
-			}
-			//()の中に"true"を入れれば無限ループの指定。無限ループしない時は下記のように何かしらの定義をつける。
-			while (stopFlagCount < 3);
-				scoreAdd.stopFlag = false;
-				scoreAdd.stopFlagBtn = true;
-				stopFlagCount = 0;
-				//次のオブジェクト
-				iTween.MoveTo (preObj, iTween.Hash(
-					"y", stopPositionY02,
-					"time", 1f,
-					"easeType", "easeInOutQuad"
-				));
-
-				//前のオブジェクト
-				iTween.MoveTo (retObj, iTween.Hash(
-					"y", stopPositionY01,
-					"time",1f,
-					"easeType", "easeInOutQuad"
-				));
-
-			// 3秒ごとに実行する
-			yield return new WaitForSeconds(3f);
-			}
+		}
 	}

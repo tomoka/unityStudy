@@ -12,6 +12,7 @@ public class scoreAdd : MonoBehaviour {
 	public static bool stopFlagBtn = true;
 
 
+
 	// Use this for initialization
 	void Start () {
 	}
@@ -84,14 +85,13 @@ public class scoreAdd : MonoBehaviour {
 			Debug.Log ("positionY----->" + positionY);
 			Debug.Log ("num----->" + num);
 
-			mainLoop.result(num,positionY01,positionY02);
+			//mainLoop.result(num,positionY01,positionY02);
 		
 			} else {
 				//elseの処理なしにする。mainLoopに処理を寄せる
 				stopFlag = false;
 				stopFlagBtn = true;
-
-			}
+						}
 
 	}
 }

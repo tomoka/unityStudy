@@ -17,13 +17,19 @@ public class moveY : MonoBehaviour {
 	void Update () {
 		if(!scoreAdd.stopFlag){
 			y = this.transform.position.y;
-			y = y - (0.1f * 2);
+			y = y - mainLoop.speed;
+					
+		}else{
+			y = this.transform.position.y;
+			y = y - mainLoop.speed;
+
+		}
+		Debug.Log(mainLoop.speed);
+		Debug.Log("y---->" + y);
 
 		this.transform.position = new Vector3(x,y,0);
-
-			if(this.transform.position.y < -3.4){
-				Destroy(this.gameObject);
-			}
+		if(this.transform.position.y < -3.4f){
+			Destroy(this.gameObject);
 		}
 		//Debug.Log(this.transform.position.y);
 
