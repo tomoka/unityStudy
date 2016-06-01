@@ -24,8 +24,8 @@ public class moveY : MonoBehaviour {
 			y = y - mainLoop.speed;
 
 		}
-		Debug.Log(mainLoop.speed);
-		Debug.Log("y---->" + y);
+		//Debug.Log(mainLoop.speed);
+		//Debug.Log("y---->" + y);
 
 		this.transform.position = new Vector3(x,y,0);
 		if(this.transform.position.y < -3.4f){

@@ -44,13 +44,13 @@ public class mainLoop : MonoBehaviour {
 		//前
 		preObj = Instantiate(Resources.Load("slotPrefab", typeof(GameObject))) as GameObject;
 		preObj.transform.name = "Obj02";
-		preObj.transform.position = new Vector3(0,8f,10f);
+		preObj.transform.position = new Vector3(0,8f,0f);
 		preObj.transform.parent = gameObject.transform;
 
 		//次
 		retObj = Instantiate(Resources.Load("slotPrefab", typeof(GameObject))) as GameObject;
 		retObj.transform.name = "Obj01";
-		retObj.transform.position = new Vector3(0,2.5f,10f);
+		retObj.transform.position = new Vector3(0,2.47f,0f);
 		retObj.transform.parent = gameObject.transform;
 	}
 	
@@ -67,16 +67,21 @@ public class mainLoop : MonoBehaviour {
 			datetimeStr = Time.time;
 		}
 		if (preObj) {
-			if (preObj.transform.position.y < 2.5f) {
+			if (preObj.transform.position.y < 2.47f) {
 			//do something.
 			Invoke("example",0);
 			}
 		}
 
 		if(speed < 2 && !scoreAdd.stopFlag){
-			speed = speed + (speed * 0.01f);
-		}else if(speed > 0.01 && scoreAdd.stopFlag){
+			speed = speed + (speed * 0.01f) + 0.001f;
+		}else if(speed > 0 && scoreAdd.stopFlag){
 			speed = speed - (speed * 0.01f);
+			if(speed < 0.02f){
+				speed = 0;
+				Invoke("result",0);
+				Debug.Log("リザルト");
+			}
 		}
 
 
@@ -89,7 +94,7 @@ public class mainLoop : MonoBehaviour {
 
 			preObj = Instantiate(Resources.Load("slotPrefab", typeof(GameObject))) as GameObject;
 			preObj.transform.name = "Obj02";
-			preObj.transform.position = new Vector3(0,8f,10f);
+			preObj.transform.position = new Vector3(0,8f,0f);
 			preObj.transform.parent = gameObject.transform;
 
 			//var sr = retObj.GetComponent<SpriteRenderer>();
@@ -107,14 +112,16 @@ public class mainLoop : MonoBehaviour {
 
 			preObj = Instantiate(Resources.Load("slotPrefab", typeof(GameObject))) as GameObject;
 			preObj.transform.name = "Obj02";
-			preObj.transform.position = new Vector3(0,8f,10f);
+			preObj.transform.position = new Vector3(0,8f,0f);
 			preObj.transform.parent = gameObject.transform;
 
 		}
+		Debug.Log("example");
 	}
-	public static void result(int num,float positionY01,float positionY02) {
-		stopPositionY01 = positionY01;
-		stopPositionY02 = positionY02;
+	void result() {
+		float positionY01 = 1f;
+		float positionY02 = 2f;
+		int num = 1;
 
 		/*switch ( num ){
 		case 1:
@@ -136,19 +143,80 @@ public class mainLoop : MonoBehaviour {
 			break;
 		}*/
 
+		//上の画像の位置で表示内容を判定
+		var positionY = mainLoop.preObj.transform.position.y;
+
+		/*
+		 * パー = (4.5~2.5)(-3.5~6.5)|(1.6~3.14)
+		 * チョキ = (2.5~0.5)(-1.5~-3.5)|(-0.25~1.56)(6.5~8.0)
+		 * グー = (6.5~4.5)(0.5~-1.5)|(3.14~5.14)
+		 */
+
+		//上のパー
+		if (positionY >= 1.6 && positionY < 3.35) {
+			num = (int)1;
+			Debug.Log("パー");
+
+			positionY01 = -2.9f;
+			positionY02 = 2.63f;
+		}
+		//下のチョキ
+		else if (positionY >= 5.29 && positionY < 7.13) {
+			num = (int)2;
+			Debug.Log("チョキ");
+
+			positionY01 = 0.6f;
+			positionY02 = 6.23f;
+		}
+		//上のグー
+		else if (positionY >= 3.35 && positionY < 5.29) {
+			num = (int)3;
+			Debug.Log("ぐー");
+
+			positionY01 = -1.13f;
+			positionY02 = 4.4f;
+		}
+		//下のパー（この表示だけありうる）
+		else if (positionY >= 7.13) {
+			num = (int)1;
+			Debug.Log("パー");
+
+			positionY01 = -2.4f;
+			positionY02 = 2.53f;
+		}
+
+		Score.score++;
+		switch(num){
+		case 1:
+			ParCounter.parCount++;
+			break;
+		case 2:
+			ChokiCounter.chokiCount++;
+			break;
+		case 3:
+			GooCounter.gooCount++;
+			break;
+		}
+
+		Debug.Log ("num----->" + num);
+
+		//mainLoop.result(num,positionY01,positionY02);
 		//次のオブジェクト
 		iTween.MoveTo (preObj, iTween.Hash(
-			"y", stopPositionY02,
+			"y", positionY02,
 			"time", 1f,
 			"easeType", "easeInOutQuad"
 		));
 
 		//前のオブジェクト
 		iTween.MoveTo (retObj, iTween.Hash(
-			"y", stopPositionY01,
+			"y", positionY01,
 			"time",1f,
 			"easeType", "easeInOutQuad"
 		));
+
+		Debug.Log ("positionY01----->" + positionY01);
+		Debug.Log ("positionY02----->" + positionY02);
 
 		}
 	}
