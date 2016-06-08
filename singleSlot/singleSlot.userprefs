@@ -1,19 +1,8 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/script/mainLoop.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Script/mainLoop.cs">
     <Files>
-      <File FileName="Assets/script/mainLoop.cs" Line="78" Column="23" />
-      <File FileName="Assets/script/ChokiCounter.cs" Line="1" Column="1" />
-      <File FileName="Assets/script/GooCounter.cs" Line="1" Column="1" />
-      <File FileName="Assets/script/ParCounter.cs" Line="1" Column="1" />
-      <File FileName="Assets/script/scoreAdd.cs" Line="94" Column="4" />
-      <File FileName="Assets/script/Score.cs" Line="2" Column="22" />
-      <File FileName="Assets/script/moveY.cs" Line="18" Column="24" />
-      <File FileName="Assets/script/objMoveY.cs" Line="66" Column="6" />
-      <File FileName="Assets/script/UIFollowTarget.cs" Line="6" Column="28" />
-      <File FileName="Assets/script/ChokiCount.cs" Line="1" Column="1" />
-      <File FileName="Assets/script/sample.cs" Line="1" Column="1" />
-      <File FileName="Assets/script/singleSpawn.cs" Line="1" Column="1" />
+      <File FileName="Assets/Script/mainLoop.cs" Line="9" Column="26" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

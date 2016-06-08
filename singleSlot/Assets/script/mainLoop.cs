@@ -1,4 +1,4 @@
- using UnityEngine;
+using UnityEngine;
 using System.Collections;
 using System;
 
@@ -6,6 +6,7 @@ public class mainLoop : MonoBehaviour {
 	// Use this for initialization
 	public GameObject objB;
 	public GameObject prefab;
+	public GameObject canvas;
 	public static GameObject retObj;
 	public static GameObject preObj;
 
@@ -45,13 +46,13 @@ public class mainLoop : MonoBehaviour {
 		preObj = Instantiate(Resources.Load("slotPrefab", typeof(GameObject))) as GameObject;
 		preObj.transform.name = "Obj02";
 		preObj.transform.position = new Vector3(0,8f,0f);
-		preObj.transform.parent = gameObject.transform;
+		preObj.transform.parent = canvas.transform.parent;
 
 		//次
 		retObj = Instantiate(Resources.Load("slotPrefab", typeof(GameObject))) as GameObject;
 		retObj.transform.name = "Obj01";
 		retObj.transform.position = new Vector3(0,2.47f,0f);
-		retObj.transform.parent = gameObject.transform;
+		retObj.transform.parent = canvas.transform.parent;
 	}
 	
 	// Update is called once per frame
@@ -95,7 +96,7 @@ public class mainLoop : MonoBehaviour {
 			preObj = Instantiate(Resources.Load("slotPrefab", typeof(GameObject))) as GameObject;
 			preObj.transform.name = "Obj02";
 			preObj.transform.position = new Vector3(0,8f,0f);
-			preObj.transform.parent = gameObject.transform;
+			preObj.transform.parent = canvas.transform.parent;
 
 			//var sr = retObj.GetComponent<SpriteRenderer>();
 			//var width = sr.bounds.size.x;
@@ -113,7 +114,7 @@ public class mainLoop : MonoBehaviour {
 			preObj = Instantiate(Resources.Load("slotPrefab", typeof(GameObject))) as GameObject;
 			preObj.transform.name = "Obj02";
 			preObj.transform.position = new Vector3(0,8f,0f);
-			preObj.transform.parent = gameObject.transform;
+			preObj.transform.parent = canvas.transform.parent;
 
 		}
 		Debug.Log("example");
