@@ -28,8 +28,6 @@ public class mainLoop : MonoBehaviour {
 
 	public static float speed = 1f;
 
-
-
 	void Start () {
 		count = 0;
 		waitTime = 0;
