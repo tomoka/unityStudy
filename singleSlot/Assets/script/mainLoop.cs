@@ -96,15 +96,6 @@ public class mainLoop : MonoBehaviour {
 			preObj.transform.position = new Vector3(0,8f,0f);
 			preObj.transform.parent = canvas.transform.parent;
 
-			//var sr = retObj.GetComponent<SpriteRenderer>();
-			//var width = sr.bounds.size.x;
-			//var height = sr.bounds.size.y;
-
-			//Debug.Log("sr.bounds.size.x--->" + (width));
-			//Debug.Log("sr.bounds.size.y--->" + (height));
-			//Debug.Log("position--->" + retObj.transform.position);
-			//Debug.Log("right---->" + retObj.transform.right);
-			//Debug.Log("localScale---->" + retObj.transform.localScale);
 		}else{
 			retObj = preObj;
 			retObj.transform.name = "Obj01";
@@ -122,26 +113,6 @@ public class mainLoop : MonoBehaviour {
 		float positionY02 = 2f;
 		int num = 1;
 
-		/*switch ( num ){
-		case 1:
-			Debug.Log("パー");
-			stopPositionY01 = -2.5f;
-			stopPositionY02 = 2.5f;
-			break;
-		case 2:
-			Debug.Log("チョキ");
-			stopPositionY01 = 0.75f;
-			stopPositionY02 = 6.25f;
-			break;
-		case 3:
-			Debug.Log("ぐー");
-			stopPositionY01 = -1.75f;
-			stopPositionY02 = 4.25f;
-			break;
-		default:
-			break;
-		}*/
-
 		//上の画像の位置で表示内容を判定
 		var positionY = mainLoop.preObj.transform.position.y;
 
@@ -152,36 +123,36 @@ public class mainLoop : MonoBehaviour {
 		 */
 
 		//上のパー
-		if (positionY >= 1.6 && positionY < 3.35) {
+		if (positionY >= 0.9 && positionY < 2.35) {
 			num = (int)1;
 			Debug.Log("パー");
 
-			positionY01 = -2.9f;
-			positionY02 = 2.63f;
+			positionY01 = -4.4f;
+			positionY02 = 1.13f;
 		}
 		//下のチョキ
-		else if (positionY >= 5.29 && positionY < 7.13) {
+		else if (positionY >= 4.29 && positionY < 6.13) {
 			num = (int)2;
 			Debug.Log("チョキ");
 
-			positionY01 = 0.6f;
-			positionY02 = 6.23f;
+			positionY01 = -0.75f;
+			positionY02 = 4.73f;
 		}
 		//上のグー
-		else if (positionY >= 3.35 && positionY < 5.29) {
+		else if (positionY >= 2.35 && positionY < 4.29) {
 			num = (int)3;
 			Debug.Log("ぐー");
 
-			positionY01 = -1.13f;
-			positionY02 = 4.4f;
+			positionY01 = -2.63f;
+			positionY02 = 2.9f;
 		}
 		//下のパー（この表示だけありうる）
-		else if (positionY >= 7.13) {
+		else if (positionY >= 6.13) {
 			num = (int)1;
-			Debug.Log("パー");
+			Debug.Log("パー2");
 
-			positionY01 = -2.4f;
-			positionY02 = 2.53f;
+			positionY01 = 1.03f;
+			positionY02 = 6.59f;
 		}
 
 		Score.score++;
