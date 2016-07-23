@@ -44,13 +44,13 @@ public class mainLoop : MonoBehaviour {
 		preObj = Instantiate(Resources.Load("slotPrefab", typeof(GameObject))) as GameObject;
 		preObj.transform.name = "Obj02";
 		preObj.transform.position = new Vector3(0,8f,0f);
-		preObj.transform.parent = canvas.transform.parent;
+		preObj.transform.parent = GameObject.Find("canvas").transform;
 
 		//次
 		retObj = Instantiate(Resources.Load("slotPrefab", typeof(GameObject))) as GameObject;
 		retObj.transform.name = "Obj01";
 		retObj.transform.position = new Vector3(0,2.47f,0f);
-		retObj.transform.parent = canvas.transform.parent;
+		retObj.transform.parent = GameObject.Find("canvas").transform;
 	}
 	
 	// Update is called once per frame
@@ -94,7 +94,7 @@ public class mainLoop : MonoBehaviour {
 			preObj = Instantiate(Resources.Load("slotPrefab", typeof(GameObject))) as GameObject;
 			preObj.transform.name = "Obj02";
 			preObj.transform.position = new Vector3(0,8f,0f);
-			preObj.transform.parent = canvas.transform.parent;
+			preObj.transform.parent = GameObject.Find("canvas").transform;
 
 		}else{
 			retObj = preObj;
@@ -103,7 +103,7 @@ public class mainLoop : MonoBehaviour {
 			preObj = Instantiate(Resources.Load("slotPrefab", typeof(GameObject))) as GameObject;
 			preObj.transform.name = "Obj02";
 			preObj.transform.position = new Vector3(0,8f,0f);
-			preObj.transform.parent = canvas.transform.parent;
+			preObj.transform.parent = GameObject.Find("canvas").transform;
 
 		}
 		Debug.Log("example");

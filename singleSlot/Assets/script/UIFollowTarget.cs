@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class UIFollowTarget : MonoBehaviour 
 {
-	RectTransform rectTransform = null;
+	/*RectTransform rectTransform = null;
 	[SerializeField] Transform target = null;
 	[SerializeField] Canvas canvas;
 
@@ -28,5 +28,5 @@ public class UIFollowTarget : MonoBehaviour
 
 		//Debug.Log("rectTransform.localPosition--->" + (rectTransform.localPosition));
 
-	}
+	}*/
 }
